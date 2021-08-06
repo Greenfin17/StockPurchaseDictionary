@@ -44,11 +44,11 @@ namespace StockPurchaseDictionary
             // Stores ticker symbols with associated company name.
             Dictionary <string, string> stocks = new Dictionary <string, string>();
 
-            // Stores aggregate purchase information.
-            Dictionary <string, double> stockValues = new Dictionary <string, double>();
-
             // Store individual purchases of stocks.
             List<(string ticker, int shares, double price)> purchases = new List<(string, int, double)>();
+
+            // Stores aggregate purchase information.
+            Dictionary <string, double> stockValues = new Dictionary <string, double>();
             
             Console.WriteLine("\n\n     Stock Tracker\n");
             
