@@ -41,11 +41,18 @@ namespace StockPurchaseDictionary
         {
             ConsoleKeyInfo key;
 
+            // Stores ticker symbols with associated company name.
             Dictionary <string, string> stocks = new Dictionary <string, string>();
+
+            // Stores aggregate purchase information.
             Dictionary <string, double> stockValues = new Dictionary <string, double>();
 
+            // Store individual purchases of stocks.
+            List<(string ticker, int shares, double price)> purchases = new List<(string, int, double)>();
+            
             Console.WriteLine("\n\n     Stock Tracker\n");
             
+            // Add stocks
             stocks.Add("RACE", "Ferrari N.V.");
             stocks.Add("F", "Ford Motor Company");
             stocks.Add("GM", "General Motors Company");
@@ -53,7 +60,6 @@ namespace StockPurchaseDictionary
             stocks.Add("MZDAY", "Mazda Motor");
             stocks.Add("NSANY", "Nissan Motor Company Ltd");
 
-            List<(string ticker, int shares, double price)> purchases = new List<(string, int, double)>();
 
             purchases.Add((ticker: "RACE", shares: 30, price: 208.00));
             purchases.Add((ticker: "RACE", shares: 20, price: 218.68));
