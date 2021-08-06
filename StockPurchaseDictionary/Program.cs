@@ -5,7 +5,7 @@ namespace StockPurchaseDictionary
 {
     class Program
     {
-        static void purchaseReport(List<(string, int, double)> purchases)
+        static void PurchaseReport(List<(string, int, double)> purchases)
         {
             foreach((string ticker, int shares, double amount) purchase in purchases)
             {
@@ -13,7 +13,7 @@ namespace StockPurchaseDictionary
             }
             Console.Write('\n');
         }
-        static void ownershipReport(List<(string, int, double)> purchases, Dictionary<string, string> stocks, ref Dictionary<string, double> stockValues)
+        static void RecordOwndership(List<(string, int, double)> purchases, Dictionary<string, string> stocks, ref Dictionary<string, double> stockValues)
         {
             foreach((string ticker, int shares, double price) purchase in purchases)
             {
@@ -70,8 +70,8 @@ namespace StockPurchaseDictionary
             purchases.Add((ticker: "MZDAY", shares: 200, price: 4.61));
             purchases.Add((ticker: "NSANY", shares: 100, price: 11.13));
 
-            purchaseReport(purchases);
-            ownershipReport(purchases, stocks, ref stockValues);
+            PurchaseReport(purchases);
+            RecordOwndership(purchases, stocks, ref stockValues);
             PrintStockValues(stockValues);
 
             Console.WriteLine("     Press any key to exit");
